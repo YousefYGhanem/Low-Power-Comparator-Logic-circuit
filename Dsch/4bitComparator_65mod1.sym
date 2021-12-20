@@ -1,0 +1,126 @@
+USER SYMBOL by DSCH 3.5
+DATE 1/10/2021 7:10:43 PM
+SYM  #4bitComparator_65mod1
+BB(0,0,40,90)
+TITLE 10 -7  #4bitComparator_65mod1
+MODEL 6000
+REC(5,5,30,80)
+PIN(0,80,0.00,0.00)B0
+PIN(0,40,0.00,0.00)A0
+PIN(0,70,0.00,0.00)B1
+PIN(0,30,0.00,0.00)A1
+PIN(0,10,0.00,0.00)A3
+PIN(0,50,0.00,0.00)B3
+PIN(0,20,0.00,0.00)A2
+PIN(0,60,0.00,0.00)B2
+PIN(40,10,2.00,1.00)AiB
+PIN(40,30,2.00,1.00)AsB
+PIN(40,20,2.00,1.00)AeB
+LIG(0,80,5,80)
+LIG(0,40,5,40)
+LIG(0,70,5,70)
+LIG(0,30,5,30)
+LIG(0,10,5,10)
+LIG(0,50,5,50)
+LIG(0,20,5,20)
+LIG(0,60,5,60)
+LIG(35,10,40,10)
+LIG(35,30,40,30)
+LIG(35,20,40,20)
+LIG(5,5,5,85)
+LIG(5,5,35,5)
+LIG(35,5,35,85)
+LIG(35,85,5,85)
+VLG module 4bitComparator_65mod1( B0,A0,B1,A1,A3,B3,A2,B2,
+VLG  AiB,AsB,AeB);
+VLG  input B0,A0,B1,A1,A3,B3,A2,B2;
+VLG  output AiB,AsB,AeB;
+VLG  wire w2,w3,w4,w5,w9,w10,w11,w13;
+VLG  wire w14,w15,w17,w18,w19,w20,w21,w22;
+VLG  wire w23,w24,w31,w32,w33,w34,w35,w36;
+VLG  wire w37,w38,w39,w40,w41,w42,w43,w44;
+VLG  wire w45,w46,w47,w48,w49,w50,w51,w52;
+VLG  wire w53,w54,w55,w56,w57,w58;
+VLG  or #(4) or4_1(AiB,w2,w3,w4,w5);
+VLG  and #(3) and4_2(AeB,w13,w14,w15,w9);
+VLG  and #(3) and4_3(w17,w13,w14,w15,w11);
+VLG  and #(3) and4_4(w5,w13,w14,w15,w10);
+VLG  and #(3) and3_5(w19,w13,w14,w18);
+VLG  and #(3) and3_6(w4,w13,w14,w20);
+VLG  and #(3) and2_7(w22,w21,w13);
+VLG  and #(3) and2_8(w3,w23,w13);
+VLG  or #(4) or4_9(AsB,w24,w22,w19,w17);
+VLG  not #(2) inv_1_10(w31,A0);
+VLG  not #(2) inv_2_11(w32,B0);
+VLG  nmos #(3) nmos_1_3_12(w34,w33,w31); //  
+VLG  pmos #(3) pmos_2_4_13(w10,vdd,w34); //  
+VLG  pmos #(3) pmos_3_5_14(w34,vdd,w31); //  
+VLG  pmos #(3) pmos_4_6_15(w34,vdd,B0); //  
+VLG  nmos #(1) nmos_5_7_16(w33,vss,B0); //  
+VLG  nmos #(3) nmos_6_8_17(w10,vss,w34); //  
+VLG  nmos #(3) nmos_1_9_18(w36,w35,A0); //  
+VLG  pmos #(3) pmos_2_10_19(w11,vdd,w36); //  
+VLG  pmos #(3) pmos_3_11_20(w36,vdd,A0); //  
+VLG  pmos #(3) pmos_4_12_21(w36,vdd,w32); //  
+VLG  nmos #(1) nmos_5_13_22(w35,vss,w32); //  
+VLG  nmos #(3) nmos_6_14_23(w11,vss,w36); //  
+VLG  pmos #(2) pmos_1_15_24(w9,w37,w11); //  
+VLG  pmos #(1) pmos_2_16_25(w37,vdd,w10); //  
+VLG  nmos #(2) nmos_3_17_26(w9,vss,w11); //  
+VLG  nmos #(2) nmos_4_18_27(w9,vss,w10); //  
+VLG  not #(2) inv_1_28(w38,A3);
+VLG  not #(2) inv_2_29(w39,B3);
+VLG  nmos #(3) nmos_1_3_30(w41,w40,w38); //  
+VLG  pmos #(3) pmos_2_4_31(w2,vdd,w41); //  
+VLG  pmos #(3) pmos_3_5_32(w41,vdd,w38); //  
+VLG  pmos #(3) pmos_4_6_33(w41,vdd,B3); //  
+VLG  nmos #(1) nmos_5_7_34(w40,vss,B3); //  
+VLG  nmos #(3) nmos_6_8_35(w2,vss,w41); //  
+VLG  nmos #(3) nmos_1_9_36(w43,w42,A3); //  
+VLG  pmos #(3) pmos_2_10_37(w24,vdd,w43); //  
+VLG  pmos #(3) pmos_3_11_38(w43,vdd,A3); //  
+VLG  pmos #(3) pmos_4_12_39(w43,vdd,w39); //  
+VLG  nmos #(1) nmos_5_13_40(w42,vss,w39); //  
+VLG  nmos #(3) nmos_6_14_41(w24,vss,w43); //  
+VLG  pmos #(5) pmos_1_15_42(w13,w44,w24); //  
+VLG  pmos #(1) pmos_2_16_43(w44,vdd,w2); //  
+VLG  nmos #(5) nmos_3_17_44(w13,vss,w24); //  
+VLG  nmos #(5) nmos_4_18_45(w13,vss,w2); //  
+VLG  not #(2) inv_1_46(w45,A2);
+VLG  not #(2) inv_2_47(w46,B2);
+VLG  nmos #(3) nmos_1_3_48(w48,w47,w45); //  
+VLG  pmos #(3) pmos_2_4_49(w23,vdd,w48); //  
+VLG  pmos #(3) pmos_3_5_50(w48,vdd,w45); //  
+VLG  pmos #(3) pmos_4_6_51(w48,vdd,B2); //  
+VLG  nmos #(1) nmos_5_7_52(w47,vss,B2); //  
+VLG  nmos #(3) nmos_6_8_53(w23,vss,w48); //  
+VLG  nmos #(3) nmos_1_9_54(w50,w49,A2); //  
+VLG  pmos #(3) pmos_2_10_55(w21,vdd,w50); //  
+VLG  pmos #(3) pmos_3_11_56(w50,vdd,A2); //  
+VLG  pmos #(3) pmos_4_12_57(w50,vdd,w46); //  
+VLG  nmos #(1) nmos_5_13_58(w49,vss,w46); //  
+VLG  nmos #(3) nmos_6_14_59(w21,vss,w50); //  
+VLG  pmos #(4) pmos_1_15_60(w14,w51,w21); //  
+VLG  pmos #(1) pmos_2_16_61(w51,vdd,w23); //  
+VLG  nmos #(4) nmos_3_17_62(w14,vss,w21); //  
+VLG  nmos #(4) nmos_4_18_63(w14,vss,w23); //  
+VLG  not #(2) inv_1_64(w52,A1);
+VLG  not #(2) inv_2_65(w53,B1);
+VLG  nmos #(3) nmos_1_3_66(w55,w54,w52); //  
+VLG  pmos #(3) pmos_2_4_67(w20,vdd,w55); //  
+VLG  pmos #(3) pmos_3_5_68(w55,vdd,w52); //  
+VLG  pmos #(3) pmos_4_6_69(w55,vdd,B1); //  
+VLG  nmos #(1) nmos_5_7_70(w54,vss,B1); //  
+VLG  nmos #(3) nmos_6_8_71(w20,vss,w55); //  
+VLG  nmos #(3) nmos_1_9_72(w57,w56,A1); //  
+VLG  pmos #(3) pmos_2_10_73(w18,vdd,w57); //  
+VLG  pmos #(3) pmos_3_11_74(w57,vdd,A1); //  
+VLG  pmos #(3) pmos_4_12_75(w57,vdd,w53); //  
+VLG  nmos #(1) nmos_5_13_76(w56,vss,w53); //  
+VLG  nmos #(3) nmos_6_14_77(w18,vss,w57); //  
+VLG  pmos #(3) pmos_1_15_78(w15,w58,w18); //  
+VLG  pmos #(1) pmos_2_16_79(w58,vdd,w20); //  
+VLG  nmos #(3) nmos_3_17_80(w15,vss,w18); //  
+VLG  nmos #(3) nmos_4_18_81(w15,vss,w20); //  
+VLG endmodule
+FSYM

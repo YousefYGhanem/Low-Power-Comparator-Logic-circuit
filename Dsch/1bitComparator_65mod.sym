@@ -1,0 +1,47 @@
+USER SYMBOL by DSCH 3.5
+DATE 1/5/2021 11:22:50 AM
+SYM  #1bitComparator_65mod
+BB(0,0,25,40)
+TITLE 10 -7  #1bitComparator_65mod
+MODEL 6000
+REC(5,5,15,30)
+PIN(0,10,0.00,0.00)A
+PIN(0,20,0.00,0.00)B
+PIN(25,10,2.00,1.00)AiB
+PIN(25,20,2.00,1.00)AeB
+PIN(25,30,2.00,1.00)AsB
+LIG(0,10,5,10)
+LIG(0,20,5,20)
+LIG(20,10,25,10)
+LIG(20,20,25,20)
+LIG(20,30,25,30)
+LIG(5,5,5,35)
+LIG(5,5,20,5)
+LIG(20,5,20,35)
+LIG(20,35,5,35)
+VLG module 1bitComparator_65mod( A,B,AiB,AeB,AsB);
+VLG  input A,B;
+VLG  output AiB,AeB,AsB;
+VLG  wire w3,w6,w7,w8,w9,w12,w13;
+VLG  pmos #(2) pmos_1(w3,vdd,B); // 0.6u 0.07u
+VLG  nmos #(2) nmos_2(w3,vss,B); // 0.3u 0.07u
+VLG  pmos #(1) pmos_3(w6,vdd,AiB); // 0.6u 0.07u
+VLG  pmos #(2) pmos_4(w7,vdd,A); // 0.6u 0.07u
+VLG  pmos #(3) pmos_5(w8,vdd,B); // 0.6u 0.07u
+VLG  pmos #(3) pmos_6(w8,vdd,w7); // 0.6u 0.07u
+VLG  pmos #(3) pmos_7(w9,vdd,A); // 0.6u 0.07u
+VLG  pmos #(3) pmos_8(w9,vdd,w3); // 0.6u 0.07u
+VLG  nmos #(3) nmos_9(AsB,vss,w9); // 0.3u 0.07u
+VLG  pmos #(3) pmos_10(AiB,vdd,w8); // 0.6u 0.07u
+VLG  pmos #(2) pmos_11(AeB,w6,AsB); // 0.6u 0.07u
+VLG  nmos #(2) nmos_12(w7,vss,A); // 0.3u 0.07u
+VLG  nmos #(3) nmos_13(w8,w12,B); // 0.3u 0.07u
+VLG  nmos #(1) nmos_14(w12,vss,w7); // 0.3u 0.07u
+VLG  nmos #(3) nmos_15(w9,w13,A); // 0.3u 0.07u
+VLG  nmos #(1) nmos_16(w13,vss,w3); // 0.3u 0.07u
+VLG  pmos #(3) pmos_17(AsB,vdd,w9); // 0.6u 0.07u
+VLG  nmos #(3) nmos_18(AiB,vss,w8); // 0.3u 0.07u
+VLG  nmos #(2) nmos_19(AeB,vss,AsB); // 0.3u 0.07u
+VLG  nmos #(2) nmos_20(AeB,vss,AiB); // 0.3u 0.07u
+VLG endmodule
+FSYM
